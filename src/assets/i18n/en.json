@@ -13,12 +13,16 @@
     "daysOnBoard": "Days On Board",
     "currency": "Currency",
     "totalIncome": "Total Income",
-    "certificates": "Certificates"
+    "certificates": "Certificates",
+    "certificateType": "Certificate Type",
+    "issueDate": "Issue Date",
+    "expiryDate": "Expiry Date"
   },
   "actions": {
     "header": "Actions",
     "edit": "Edit",
     "delete": "Delete",
     "viewCertificates": "View Certificates"
-  }
+  },
+  "Close": "Close"
 }

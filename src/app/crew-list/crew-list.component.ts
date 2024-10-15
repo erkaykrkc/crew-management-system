@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CrewService } from '../services/crew.service';
 import { Crew } from '../models/crew.model';
+import { CrewCertificatesModalComponent } from '../dialog/crew-certificates-modal/crew-certificates-modal.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-crew-list',
@@ -12,7 +14,7 @@ export class CrewListComponent {
   crewList: Crew[] = [];
   totalIncomeSummary = [];
 
-  constructor(private crewService: CrewService) {
+  constructor(private crewService: CrewService, public dialog: MatDialog) {
     this.crewList = this.crewService.getCrewList();
   }
 
@@ -29,6 +31,9 @@ export class CrewListComponent {
   }
 
   viewCertificateModal(crew: Crew) {
-    // 
+    this.dialog.open(CrewCertificatesModalComponent, {
+      width: '500px',
+      data: { certificates: crew.certificates }
+    });
   }
 }

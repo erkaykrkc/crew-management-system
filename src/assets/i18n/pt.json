@@ -1,23 +1,28 @@
 {
-  "Crew Management System": "Sistema de Gerenciamento de Tripulação",
+  "Crew Management System": "Sistema de Gestão de Tripulação",
   "Language": "Idioma",
   "English": "Inglês",
   "France": "Francês",
   "Portuguese": "Português",
   "crew": {
-    "firstName": "Nome",
+    "firstName": "Primeiro Nome",
     "lastName": "Sobrenome",
     "nationality": "Nacionalidade",
     "title": "Título",
     "dailyRate": "Taxa Diária",
     "daysOnBoard": "Dias a Bordo",
     "currency": "Moeda",
-    "certificates": "Certificados"
+    "totalIncome": "Rendimento Total",
+    "certificates": "Certificados",
+    "certificateType": "Tipo de Certificado",
+    "issueDate": "Data de Emissão",
+    "expiryDate": "Data de Expiração"
   },
   "actions": {
     "header": "Ações",
     "edit": "Editar",
     "delete": "Excluir",
     "viewCertificates": "Ver Certificados"
-  }
+  },
+  "Close": "Fechar"
 }

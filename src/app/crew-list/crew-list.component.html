@@ -46,7 +46,7 @@
   <ng-container matColumnDef="certificates">
     <mat-header-cell *matHeaderCellDef> {{ 'crew.certificates' | translate }} </mat-header-cell>
     <mat-cell *matCellDef="let crew">
-      <!-- <button mat-button (click)="openCertificatesModal(crew)">View</button> -->
+      <button mat-button (click)="viewCertificateModal(crew)">View</button>
     </mat-cell>
   </ng-container>
 
@@ -58,7 +58,6 @@
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="viewCertificateModal(crew)">{{'actions.viewCertificates' | translate}}</button>
         <button mat-menu-item (click)="editCrew(crew)">{{'actions.edit' | translate}}</button>
         <button mat-menu-item (click)="deleteCrew(crew)">{{'actions.delete' | translate}}</button>
       </mat-menu>

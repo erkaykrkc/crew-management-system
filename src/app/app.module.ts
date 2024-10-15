@@ -14,6 +14,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HomeComponent } from './home/home.component';
 import { LanguageSelectorComponent } from './language-selector/language-selector.component';
 import { CrewListComponent } from './crew-list/crew-list.component';
+import { CrewCertificatesModalComponent } from './dialog/crew-certificates-modal/crew-certificates-modal.component';
 
 // Import Angular Material UI Modules
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -23,6 +24,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatDividerModule } from '@angular/material/divider';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -33,7 +35,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     HomeComponent,
     LanguageSelectorComponent,
-    CrewListComponent
+    CrewListComponent,
+    CrewCertificatesModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatSelectModule,
     MatButtonModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDividerModule
   ],
   providers: [
     provideAnimationsAsync()

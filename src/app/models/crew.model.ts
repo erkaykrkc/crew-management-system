@@ -6,7 +6,7 @@ export interface Crew {
     daysOnBoard: number;
     dailyRate: number;
     currency: string;
-    certificates?: Certificate[];
+    certificates: Certificate[];
 }
 
 export interface Certificate {

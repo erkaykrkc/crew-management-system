@@ -1,5 +1,5 @@
 {
-  "Crew Management System": "Système de gestion d'équipage",
+  "Crew Management System": "Système de Gestion de l'Équipage",
   "Language": "Langue",
   "English": "Anglais",
   "France": "Français",
@@ -12,12 +12,17 @@
     "dailyRate": "Taux Journalier",
     "daysOnBoard": "Jours à Bord",
     "currency": "Devise",
-    "certificates": "Certificats"
+    "totalIncome": "Revenu Total",
+    "certificates": "Certificats",
+    "certificateType": "Type de Certificat",
+    "issueDate": "Date d'Émission",
+    "expiryDate": "Date d'Expiration"
   },
   "actions": {
     "header": "Actions",
     "edit": "Modifier",
     "delete": "Supprimer",
     "viewCertificates": "Voir les Certificats"
-  }
+  },
+  "Close": "Fermer"
 }
