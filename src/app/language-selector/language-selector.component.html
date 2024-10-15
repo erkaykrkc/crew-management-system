@@ -1,15 +1,15 @@
 <mat-menu #languageMenu="matMenu">
     <button mat-menu-item (click)="changeLanguage('en')">
       <img src="assets/icons/flags/en.png" alt="English Flag" class="flag-icon">
-      English
+      {{'English' | translate}}
     </button>
     <button mat-menu-item (click)="changeLanguage('fr')">
       <img src="assets/icons/flags/fr.png" alt="French Flag" class="flag-icon">
-      Français
+      {{'France' | translate}}
     </button>
     <button mat-menu-item (click)="changeLanguage('pt')">
       <img src="assets/icons/flags/pt.png" alt="Portuguese Flag" class="flag-icon">
-      Português
+      {{'Portuguese' | translate}}
     </button>
   </mat-menu>
   

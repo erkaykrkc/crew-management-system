@@ -1,0 +1,71 @@
+<mat-table [dataSource]="crewList" class="mat-elevation-z8">
+  <!-- First Name Column -->
+  <ng-container matColumnDef="firstName">
+    <mat-header-cell *matHeaderCellDef>{{ "crew.firstName" | translate }}</mat-header-cell>
+    <mat-cell *matCellDef="let crew">{{ crew.firstName }}</mat-cell>
+  </ng-container>
+
+  <!-- Last Name Column -->
+  <ng-container matColumnDef="lastName">
+    <mat-header-cell *matHeaderCellDef>{{ 'crew.lastName' | translate }}</mat-header-cell>
+    <mat-cell *matCellDef="let crew">{{ crew.lastName }}</mat-cell>
+  </ng-container>
+
+  <!-- Nationality Column -->
+  <ng-container matColumnDef="nationality">
+    <mat-header-cell *matHeaderCellDef>{{ 'crew.nationality' | translate }}</mat-header-cell>
+    <mat-cell *matCellDef="let crew">{{ crew.nationality }}</mat-cell>
+  </ng-container>
+
+  <!-- Title Column -->
+  <ng-container matColumnDef="title">
+    <mat-header-cell *matHeaderCellDef>{{ 'crew.title' | translate }}</mat-header-cell>
+    <mat-cell *matCellDef="let crew">{{ crew.title }}</mat-cell>
+  </ng-container>
+
+  <!-- Daily Rate Column -->
+  <ng-container matColumnDef="dailyRate">
+    <mat-header-cell *matHeaderCellDef>{{ 'crew.dailyRate' | translate }}</mat-header-cell>
+    <mat-cell *matCellDef="let crew">{{ crew.dailyRate }}</mat-cell>
+  </ng-container>
+
+  <!-- Days On Board Column -->
+  <ng-container matColumnDef="daysOnBoard">
+    <mat-header-cell *matHeaderCellDef>{{ 'crew.daysOnBoard' | translate }}</mat-header-cell>
+    <mat-cell *matCellDef="let crew">{{ crew.dailyRate }}</mat-cell>
+  </ng-container>
+
+  <!-- Currency Column -->
+  <ng-container matColumnDef="currency">
+    <mat-header-cell *matHeaderCellDef>{{ 'crew.currency' | translate }}</mat-header-cell>
+    <mat-cell *matCellDef="let crew">{{ crew.currency }}</mat-cell>
+  </ng-container>
+
+
+  <!-- Certificates Column -->
+  <ng-container matColumnDef="certificates">
+    <mat-header-cell *matHeaderCellDef> {{ 'crew.certificates' | translate }} </mat-header-cell>
+    <mat-cell *matCellDef="let crew">
+      <!-- <button mat-button (click)="openCertificatesModal(crew)">View</button> -->
+    </mat-cell>
+  </ng-container>
+
+  <!-- Action Menu Column -->
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef>{{ 'actions.header' | translate}}</mat-header-cell>
+    <mat-cell *matCellDef="let crew">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="viewCertificateModal(crew)">{{'actions.viewCertificates' | translate}}</button>
+        <button mat-menu-item (click)="editCrew(crew)">{{'actions.edit' | translate}}</button>
+        <button mat-menu-item (click)="deleteCrew(crew)">{{'actions.delete' | translate}}</button>
+      </mat-menu>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Header Row and Data Row -->
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

@@ -1,4 +1,24 @@
 {
   "Crew Management System": "Crew Management System",
-  "Language": "Language"
+  "Language": "Language",
+  "English": "English",
+  "France": "France",
+  "Portuguese": "Portuguese",
+  "crew": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "nationality": "Nationality",
+    "title": "Title",
+    "dailyRate": "Daily Rate",
+    "daysOnBoard": "Days On Board",
+    "currency": "Currency",
+    "totalIncome": "Total Income",
+    "certificates": "Certificates"
+  },
+  "actions": {
+    "header": "Actions",
+    "edit": "Edit",
+    "delete": "Delete",
+    "viewCertificates": "View Certificates"
+  }
 }

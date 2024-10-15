@@ -1,4 +1,23 @@
 {
   "Crew Management System": "Sistema de Gerenciamento de Tripulação",
-  "Language": "Idioma"
+  "Language": "Idioma",
+  "English": "Inglês",
+  "France": "Francês",
+  "Portuguese": "Português",
+  "crew": {
+    "firstName": "Nome",
+    "lastName": "Sobrenome",
+    "nationality": "Nacionalidade",
+    "title": "Título",
+    "dailyRate": "Taxa Diária",
+    "daysOnBoard": "Dias a Bordo",
+    "currency": "Moeda",
+    "certificates": "Certificados"
+  },
+  "actions": {
+    "header": "Ações",
+    "edit": "Editar",
+    "delete": "Excluir",
+    "viewCertificates": "Ver Certificados"
+  }
 }

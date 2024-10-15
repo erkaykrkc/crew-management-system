@@ -1,4 +1,23 @@
 {
   "Crew Management System": "Système de gestion d'équipage",
-  "Language": "Langue"
+  "Language": "Langue",
+  "English": "Anglais",
+  "France": "Français",
+  "Portuguese": "Portugais",
+  "crew": {
+    "firstName": "Prénom",
+    "lastName": "Nom de Famille",
+    "nationality": "Nationalité",
+    "title": "Titre",
+    "dailyRate": "Taux Journalier",
+    "daysOnBoard": "Jours à Bord",
+    "currency": "Devise",
+    "certificates": "Certificats"
+  },
+  "actions": {
+    "header": "Actions",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "viewCertificates": "Voir les Certificats"
+  }
 }

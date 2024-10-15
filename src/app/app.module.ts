@@ -13,6 +13,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 // Importing Crew Management Components
 import { HomeComponent } from './home/home.component';
 import { LanguageSelectorComponent } from './language-selector/language-selector.component';
+import { CrewListComponent } from './crew-list/crew-list.component';
 
 // Import Angular Material UI Modules
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -20,6 +21,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -29,7 +32,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     HomeComponent,
-    LanguageSelectorComponent
+    LanguageSelectorComponent,
+    CrewListComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatMenuModule,
     MatSelectModule,
     MatButtonModule,
+    MatTableModule,
+    MatDialogModule
   ],
   providers: [
     provideAnimationsAsync()
