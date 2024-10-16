@@ -12,9 +12,8 @@ import { AddCrewModalComponent } from '../dialogs/add-crew-modal/add-crew-modal.
   styleUrl: './crew-list.component.scss'
 })
 export class CrewListComponent {
-  displayedColumns: string[] = ['firstName', 'lastName', 'nationality', 'title', 'dailyRate', 'daysOnBoard', 'currency', 'certificates', 'actions'];
+  displayedColumns: string[] = ['firstName', 'lastName', 'nationality', 'title', 'dailyRate', 'daysOnBoard', 'currency', 'totalIncome', 'certificates', 'actions'];
   crewList: Crew[] = [];
-  totalIncomeSummary = [];
 
   constructor(private crewService: CrewService, public dialog: MatDialog) {
     this.crewList = this.crewService.getCrewList();
@@ -65,5 +64,22 @@ export class CrewListComponent {
       width: '500px',
       data: { certificates: crew.certificates }
     });
+  }
+
+  // calculate total income
+  getTotalIncome(crewMember: Crew): number {
+    return crewMember.dailyRate * crewMember.daysOnBoard;
+  }
+
+  getTotalIncomeByCurrency(currency: string): number {
+    let totalIncome = 0;
+
+    const filteredCrew = this.crewList.filter(crew => crew.currency === currency);
+
+    filteredCrew.forEach(crew => {
+      totalIncome += this.getTotalIncome(crew);
+    });
+
+    return totalIncome;
   }
 }
