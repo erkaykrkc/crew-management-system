@@ -8,14 +8,26 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class LanguageSelectorComponent {
 
-  selectedLanguage: string = 'en';
+  selectedLanguage: any;
 
   constructor(private translate: TranslateService) {
+    console.log('anne', localStorage.getItem('selectedLanguage'));
+  }
+
+  ngOnInit(): void {
+    if (localStorage.getItem('selectedLanguage')) {
+      this.selectedLanguage = localStorage.getItem('selectedLanguage');
+    }
+    else {
+      this.selectedLanguage = 'en';
+      localStorage.setItem('selectedLanguage', this.selectedLanguage);
+    }
     this.translate.setDefaultLang(this.selectedLanguage);
   }
 
   changeLanguage(language: string) {
     this.selectedLanguage = language;
     this.translate.use(language);
+    localStorage.setItem('selectedLanguage', this.selectedLanguage); // When the user select any language, save the localStorage 
   }
 }
