@@ -35,6 +35,7 @@
     "viewCertificates": "View Certificates",
     "removeCertificate": "Remove Certificate",
     "addCertificate": "Add Certificate",
+    "viewDetails": "View Details",
     "cancel": "Cancel",
     "save": "Save"
   },

@@ -73,6 +73,9 @@
             <button mat-menu-item (click)="deleteCrew(crew)">
               <mat-icon>delete</mat-icon>   {{'actions.delete' | translate}}
             </button>
+            <button mat-menu-item (click)="viewCrewDetails(crew)">
+              <mat-icon>visibility</mat-icon>  {{ 'actions.viewDetails' | translate }}
+            </button>
           </mat-menu>
         </mat-cell>
       </ng-container>

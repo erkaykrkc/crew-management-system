@@ -17,6 +17,8 @@ import { LanguageSelectorComponent } from './language-selector/language-selector
 import { CrewListComponent } from './crew-list/crew-list.component';
 import { CrewCertificatesModalComponent } from './dialogs/crew-certificates-modal/crew-certificates-modal.component';
 import { EditCrewModalComponent } from './dialogs/edit-crew-modal/edit-crew-modal.component';
+import { AddCrewModalComponent } from './dialogs/add-crew-modal/add-crew-modal.component';
+import { CrewCardModalComponent } from './dialogs/crew-card-modal/crew-card-modal.component';
 
 // Import Angular Material UI Modules
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -33,7 +35,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { AddCrewModalComponent } from './dialogs/add-crew-modal/add-crew-modal.component';
+
 
 // for translating from jsons
 export function HttpLoaderFactory(http: HttpClient) {
@@ -49,6 +51,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     CrewCertificatesModalComponent,
     EditCrewModalComponent,
     AddCrewModalComponent,
+    CrewCardModalComponent,
   ],
   imports: [
     BrowserModule,

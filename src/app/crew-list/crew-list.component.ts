@@ -5,6 +5,7 @@ import { CrewCertificatesModalComponent } from '../dialogs/crew-certificates-mod
 import { MatDialog } from '@angular/material/dialog';
 import { EditCrewModalComponent } from '../dialogs/edit-crew-modal/edit-crew-modal.component';
 import { AddCrewModalComponent } from '../dialogs/add-crew-modal/add-crew-modal.component';
+import { CrewCardModalComponent } from '../dialogs/crew-card-modal/crew-card-modal.component';
 
 @Component({
   selector: 'app-crew-list',
@@ -71,6 +72,7 @@ export class CrewListComponent {
     return crewMember.dailyRate * crewMember.daysOnBoard;
   }
 
+  // calculate all total income
   getTotalIncomeByCurrency(currency: string): number {
     let totalIncome = 0;
 
@@ -81,5 +83,13 @@ export class CrewListComponent {
     });
 
     return totalIncome;
+  }
+
+  // Crew Card Page
+  viewCrewDetails(crew: Crew) {
+    this.dialog.open(CrewCardModalComponent, {
+      width: '600px',
+      data: crew
+    });
   }
 }
