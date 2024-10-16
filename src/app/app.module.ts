@@ -33,6 +33,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AddCrewModalComponent } from './dialogs/add-crew-modal/add-crew-modal.component';
 
 // for translating from jsons
 export function HttpLoaderFactory(http: HttpClient) {
@@ -47,6 +48,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     CrewListComponent,
     CrewCertificatesModalComponent,
     EditCrewModalComponent,
+    AddCrewModalComponent,
   ],
   imports: [
     BrowserModule,

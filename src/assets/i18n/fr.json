@@ -5,6 +5,7 @@
   "France": "Français",
   "Portuguese": "Portugais",
   "Edit Crew Member": "Modifier Membre de l'Équipage",
+  "Add Crew Member": "Ajouter un membre d'équipage",
   "crew": {
     "firstName": "Prénom",
     "lastName": "Nom de Famille",
@@ -40,7 +41,34 @@
   "Close": "Fermer",
   "View": "Voir",
   "messages": {
+    "addSuccess": "Membre d'équipage ajouté avec succès!",
     "editSuccess": "Membre d'équipage mis à jour avec succès!",
     "deleteSuccess": "Membre d'équipage supprimé avec succès!"
+  },
+  "titles": {
+    "Captain": "Capitaine",
+    "First Officer": "Premier Officier",
+    "Chief Engineer": "Ingénieur en Chef",
+    "Second Officer": "Second Officier",
+    "Third Officer": "Troisième Officier",
+    "Bosun": "Bosco",
+    "Deckhand": "Matelot",
+    "Chief Steward": "Chef Steward",
+    "Second Engineer": "Second Ingénieur",
+    "Radio Operator": "Opérateur Radio"
+  },
+  "nationalities": {
+    "USA": "États-Unis",
+    "Canada": "Canada",
+    "UK": "Royaume-Uni",
+    "Germany": "Allemagne",
+    "France": "France",
+    "Brazil": "Brésil",
+    "Russia": "Russie",
+    "Japan": "Japon",
+    "Australia": "Australie",
+    "India": "Inde",
+    "Turkey": "Turquie",
+    "Spain": "Espagne"
   }
 }

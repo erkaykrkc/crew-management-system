@@ -12,13 +12,13 @@ export class EditCrewModalComponent implements OnInit {
 
   editCrewForm: FormGroup = new FormGroup({});
 
+  nationalities: string[] = [];
+  titles: string[] = [];
+
   constructor(
     public dialogRef: MatDialogRef<EditCrewModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Crew
-  ) { }
-
-  ngOnInit() {
-    // Formu başlatıyoruz
+  ) {
     this.editCrewForm = new FormGroup({
       firstName: new FormControl(this.data.firstName, Validators.required),
       lastName: new FormControl(this.data.lastName, Validators.required),
@@ -31,6 +31,22 @@ export class EditCrewModalComponent implements OnInit {
     });
   }
 
+  ngOnInit() {
+    this.nationalities = this.getNationalities();
+    this.titles = this.getTitles();
+  }
+
+  getNationalities(): string[] {
+    return ['USA', 'Canada', 'UK', 'Germany', 'France', 'Brazil', 'Russia', 'Japan', 'Australia', 'India', 'Turkey', 'Spain'];
+  }
+
+  getTitles(): string[] {
+    return ['Captain', 'First Officer', 'Chief Engineer', 'Second Officer', 'Third Officer', 'Bosun', 'Deckhand', 'Chief Steward', 'Second Engineer', 'Radio Operator'];
+  }
+
+  get certificatesArray(): FormArray {
+    return this.editCrewForm.get('certificates') as FormArray;
+  }
 
   createCertificateGroup(cert: any): FormGroup {
     return new FormGroup({

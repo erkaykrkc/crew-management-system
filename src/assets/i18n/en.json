@@ -5,6 +5,7 @@
   "France": "France",
   "Portuguese": "Portuguese",
   "Edit Crew Member": "Edit Crew Member",
+  "Add Crew Member": "Add Crew Member",
   "crew": {
     "firstName": "First Name",
     "lastName": "Last Name",
@@ -40,8 +41,34 @@
   "Close": "Close",
   "View": "View",
   "messages": {
+    "addSuccess": "Crew member added successfully!",
     "editSuccess": "Crew member updated successfully!",
-    "deleteSuccess": "Crew member deleted successfully!",
-    "close": "Close"
+    "deleteSuccess": "Crew member deleted successfully!"
+  },
+  "titles": {
+    "Captain": "Captain",
+    "First Officer": "First Officer",
+    "Chief Engineer": "Chief Engineer",
+    "Second Officer": "Second Officer",
+    "Third Officer": "Third Officer",
+    "Bosun": "Bosun",
+    "Deckhand": "Deckhand",
+    "Chief Steward": "Chief Steward",
+    "Second Engineer": "Second Engineer",
+    "Radio Operator": "Radio Operator"
+  },
+  "nationalities": {
+    "USA": "USA",
+    "Canada": "Canada",
+    "UK": "UK",
+    "Germany": "Germany",
+    "France": "France",
+    "Brazil": "Brazil",
+    "Russia": "Russia",
+    "Japan": "Japan",
+    "Australia": "Australia",
+    "India": "India",
+    "Turkey": "Turkey",
+    "Spain": "Spain"
   }
 }

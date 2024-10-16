@@ -20,18 +20,14 @@
                 <mat-form-field appearance="fill">
                     <mat-label>{{ 'crew.title' | translate}}</mat-label>
                     <mat-select formControlName="title">
-                        <mat-option value="Captain">{{ 'crew.captain' | translate}}</mat-option>
-                        <mat-option value="First Officer">{{ 'crew.firstOfficer' | translate}}</mat-option>
-                        <mat-option value="Engineer">{{ 'crew.engineer' | translate}}</mat-option>
+                        <mat-option *ngFor="let title of titles" [value]="title">{{ 'titles.' + title | translate}}</mat-option>
                     </mat-select>
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
                     <mat-label>{{ 'crew.nationality' | translate}}</mat-label>
                     <mat-select formControlName="nationality">
-                        <mat-option value="USA">{{ 'crew.usa' | translate}}</mat-option>
-                        <mat-option value="Canada">{{ 'crew.canada' | translate}}</mat-option>
-                        <mat-option value="UK">{{ 'crew.uk' | translate}}</mat-option>
+                        <mat-option *ngFor="let nationality of nationalities" [value]="nationality">{{ 'nationalities.' + nationality | translate}}</mat-option>
                     </mat-select>
                 </mat-form-field>
 
