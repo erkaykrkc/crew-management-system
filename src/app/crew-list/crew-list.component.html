@@ -32,7 +32,7 @@
   <!-- Days On Board Column -->
   <ng-container matColumnDef="daysOnBoard">
     <mat-header-cell *matHeaderCellDef>{{ 'crew.daysOnBoard' | translate }}</mat-header-cell>
-    <mat-cell *matCellDef="let crew">{{ crew.dailyRate }}</mat-cell>
+    <mat-cell *matCellDef="let crew">{{ crew.daysOnBoard }}</mat-cell>
   </ng-container>
 
   <!-- Currency Column -->
@@ -41,25 +41,28 @@
     <mat-cell *matCellDef="let crew">{{ crew.currency }}</mat-cell>
   </ng-container>
 
-
   <!-- Certificates Column -->
   <ng-container matColumnDef="certificates">
     <mat-header-cell *matHeaderCellDef> {{ 'crew.certificates' | translate }} </mat-header-cell>
     <mat-cell *matCellDef="let crew">
-      <button mat-button (click)="viewCertificateModal(crew)">View</button>
+      <button mat-button [disabled]="crew.certificates.length === 0" (click)="viewCertificateModal(crew)"> {{'View' | translate}}</button>
     </mat-cell>
   </ng-container>
 
   <!-- Action Menu Column -->
   <ng-container matColumnDef="actions">
     <mat-header-cell *matHeaderCellDef>{{ 'actions.header' | translate}}</mat-header-cell>
-    <mat-cell *matCellDef="let crew">
+    <mat-cell *matCellDef="let crew; let crewIndex= index">
       <button mat-icon-button [matMenuTriggerFor]="menu">
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="editCrew(crew)">{{'actions.edit' | translate}}</button>
-        <button mat-menu-item (click)="deleteCrew(crew)">{{'actions.delete' | translate}}</button>
+        <button mat-menu-item (click)="editCrew(crew, crewIndex)">
+          <mat-icon>edit</mat-icon>  {{'actions.edit' | translate}}
+        </button>
+        <button mat-menu-item (click)="deleteCrew(crew)">
+          <mat-icon>delete</mat-icon>   {{'actions.delete' | translate}}
+        </button>
       </mat-menu>
     </mat-cell>
   </ng-container>

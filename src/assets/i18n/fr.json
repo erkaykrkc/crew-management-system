@@ -4,6 +4,7 @@
   "English": "Anglais",
   "France": "Français",
   "Portuguese": "Portugais",
+  "Edit Crew Member": "Modifier Membre de l'Équipage",
   "crew": {
     "firstName": "Prénom",
     "lastName": "Nom de Famille",
@@ -16,13 +17,30 @@
     "certificates": "Certificats",
     "certificateType": "Type de Certificat",
     "issueDate": "Date d'Émission",
-    "expiryDate": "Date d'Expiration"
+    "expiryDate": "Date d'Expiration",
+    "crewMemberInformation": "Informations sur le Membre de l'Équipage",
+    "captain": "Capitaine",
+    "firstOfficer": "Premier Officier",
+    "engineer": "Ingénieur",
+    "canada": "Canada",
+    "usa": "USA",
+    "uk": "Royaume-Uni",
+    "certificate": "Certificat"
   },
   "actions": {
     "header": "Actions",
     "edit": "Modifier",
     "delete": "Supprimer",
-    "viewCertificates": "Voir les Certificats"
+    "viewCertificates": "Voir les Certificats",
+    "removeCertificate": "Supprimer le Certificat",
+    "addCertificate": "Ajouter un Certificat",
+    "cancel": "Annuler",
+    "save": "Sauvegarder"
   },
-  "Close": "Fermer"
+  "Close": "Fermer",
+  "View": "Voir",
+  "messages": {
+    "editSuccess": "Membre d'équipage mis à jour avec succès!",
+    "deleteSuccess": "Membre d'équipage supprimé avec succès!"
+  }
 }

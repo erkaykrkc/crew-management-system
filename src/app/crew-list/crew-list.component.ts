@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { CrewService } from '../services/crew.service';
 import { Crew } from '../models/crew.model';
-import { CrewCertificatesModalComponent } from '../dialog/crew-certificates-modal/crew-certificates-modal.component';
+import { CrewCertificatesModalComponent } from '../dialogs/crew-certificates-modal/crew-certificates-modal.component';
 import { MatDialog } from '@angular/material/dialog';
+import { EditCrewModalComponent } from '../dialogs/edit-crew-modal/edit-crew-modal.component';
 
 @Component({
   selector: 'app-crew-list',
@@ -18,18 +19,32 @@ export class CrewListComponent {
     this.crewList = this.crewService.getCrewList();
   }
 
-  editCrew(crew: Crew) {
+  // Update crew method
+  editCrew(crew: Crew, crewIndex: number): void {
+    const dialogRef = this.dialog.open(EditCrewModalComponent, {
+      width: '600px',
+      data: { ...crew }
+    });
 
+    dialogRef.afterClosed().subscribe(data => {
+      console.log('result', data)
+      if (data) {
+        this.crewService.editCrew(data, crewIndex);
+        this.crewList = this.crewService.getCrewList();
+      }
+    });
   }
 
+  // Delete crew method
   deleteCrew(crew: Crew) {
-    const index = this.crewList.indexOf(crew);
+    const index = this.crewList.indexOf(crew);  // crewList'ten indeksi alıyoruz
     if (index > -1) {
       this.crewService.deleteCrew(index);
-      this.crewList = this.crewService.getCrewList();
+      this.crewList = this.crewService.getCrewList();  // Listeyi güncelle
     }
   }
 
+  // Show certificate 
   viewCertificateModal(crew: Crew) {
     this.dialog.open(CrewCertificatesModalComponent, {
       width: '500px',

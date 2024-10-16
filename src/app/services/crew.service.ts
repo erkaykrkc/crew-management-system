@@ -1,51 +1,51 @@
 import { Injectable } from '@angular/core';
 import { Crew } from '../models/crew.model';
+import { CREW_DATA } from './example-crew-data'; // imported example of crew members
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CrewService {
 
-  private crewList: Crew[] = [
-    {
-      firstName: 'John',
-      lastName: 'Doe',
-      nationality: 'USA',
-      title: 'Captain',
-      daysOnBoard: 120,
-      dailyRate: 200,
-      currency: 'USD',
-      certificates: [
-        { type: 'Captain License', issueDate: '2020-01-01', expiryDate: '2025-01-01' },
-        { type: 'Safety Training', issueDate: '2019-06-01', expiryDate: '2024-06-01' }
-      ]
-    },
-    {
-      firstName: 'Alex',
-      lastName: 'Smith',
-      nationality: 'Canada',
-      title: 'Engineer',
-      daysOnBoard: 90,
-      dailyRate: 180,
-      currency: 'USD',
-      certificates: [
-        { type: 'Engineer License', issueDate: '2018-07-15', expiryDate: '2023-07-15' },
-        { type: 'Firefighting', issueDate: '2019-01-01', expiryDate: '2024-01-01' }
-      ]
-    },
-  ];
+  private crewList: Crew[] = CREW_DATA;
 
-  constructor() { }
+  constructor(private snackBar: MatSnackBar, private translate: TranslateService) { }
 
+  // Get crew member lists
   getCrewList(): Crew[] {
     return this.crewList;
   }
 
-  addCrew(crew: Crew) {
-    this.crewList.push(crew);
+  // Update crew service
+  editCrew(data: Crew, crewIndex: number): void {
+    this.crewList = this.crewList.map((crew, index) =>
+      index === crewIndex ? data : crew
+    );
+
+    // After updated crew, show updated message according to selected language
+    this.translate.get('messages.editSuccess').subscribe((translatedMessage: string) => {
+      this.snackBar.open(translatedMessage, 'Close', {
+        duration: 1500,
+        horizontalPosition: 'right',
+        verticalPosition: 'bottom'
+      });
+    });
   }
 
-  deleteCrew(index: number) {
-    this.crewList.splice(index, 1);
+  // Delete crew service
+  deleteCrew(index: number): void {
+    this.crewList = this.crewList.filter((crewMember, currentIndex) => currentIndex !== index);
+
+    // After deleted crew, show deleted message according to selected language
+    this.translate.get('messages.deleteSuccess').subscribe((translatedMessage: string) => {
+      this.snackBar.open(translatedMessage, 'Close', {
+        duration: 1500,
+        horizontalPosition: 'right',
+        verticalPosition: 'bottom'
+      });
+    });
   }
 }

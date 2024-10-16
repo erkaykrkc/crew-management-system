@@ -1,0 +1,102 @@
+<h2 mat-dialog-title>{{'Edit Crew Member' | translate}}</h2>
+<mat-divider></mat-divider>
+
+<mat-dialog-content>
+    <form [formGroup]="editCrewForm" (ngSubmit)="onSave()">
+
+        <mat-tab-group>
+            <!-- Crew Member Information Tab -->
+            <mat-tab label="{{ 'crew.crewMemberInformation' | translate}}">
+                <mat-form-field appearance="fill" style="margin-top: 15px;">
+                    <mat-label>{{ 'crew.firstName' | translate}}</mat-label>
+                    <input matInput placeholder="First Name" formControlName="firstName">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>{{ 'crew.lastName' | translate}}</mat-label>
+                    <input matInput placeholder="Last Name" formControlName="lastName">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>{{ 'crew.title' | translate}}</mat-label>
+                    <mat-select formControlName="title">
+                        <mat-option value="Captain">{{ 'crew.captain' | translate}}</mat-option>
+                        <mat-option value="First Officer">{{ 'crew.firstOfficer' | translate}}</mat-option>
+                        <mat-option value="Engineer">{{ 'crew.engineer' | translate}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>{{ 'crew.nationality' | translate}}</mat-label>
+                    <mat-select formControlName="nationality">
+                        <mat-option value="USA">{{ 'crew.usa' | translate}}</mat-option>
+                        <mat-option value="Canada">{{ 'crew.canada' | translate}}</mat-option>
+                        <mat-option value="UK">{{ 'crew.uk' | translate}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>{{ 'crew.currency' | translate}}</mat-label>
+                    <mat-select formControlName="currency">
+                        <mat-option value="USD">USD</mat-option>
+                        <mat-option value="EUR">EUR</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>{{ 'crew.dailyRate' | translate}}</mat-label>
+                    <input matInput placeholder="Daily Rate" formControlName="dailyRate" type="number">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>{{ 'crew.daysOnBoard' | translate}}</mat-label>
+                    <input matInput placeholder="Days on Board" formControlName="daysOnBoard" type="number">
+                </mat-form-field>
+            </mat-tab>
+
+            <!-- Certificates Tab -->
+            <mat-tab label="{{ 'crew.certificate' | translate}}">
+                <div formArrayName="certificates">
+                    <div *ngFor="let cert of certificates.controls; let i=index" [formGroupName]="i">
+                        <mat-card style="margin-bottom: 16px;">
+                            <mat-card-header>
+                                <mat-card-title>{{ 'crew.certificate' | translate}} #{{i + 1}}</mat-card-title>
+                            </mat-card-header>
+
+                            <mat-card-content>
+                                <mat-form-field appearance="fill" style="width: 100%;">
+                                    <mat-label>{{ 'crew.certificateType' | translate}}</mat-label>
+                                    <input matInput placeholder="Certificate Type" formControlName="type">
+                                </mat-form-field>
+
+                                <mat-form-field appearance="fill" style="width: 100%;">
+                                    <mat-label>{{ 'crew.issueDate' | translate}}</mat-label>
+                                    <input matInput placeholder="Issue Date" formControlName="issueDate" type="date">
+                                </mat-form-field>
+
+                                <mat-form-field appearance="fill" style="width: 100%;">
+                                    <mat-label>{{ 'crew.expiryDate' | translate}}</mat-label>
+                                    <input matInput placeholder="Expiry Date" formControlName="expiryDate" type="date">
+                                </mat-form-field>
+                            </mat-card-content>
+
+                            <mat-card-actions>
+                                <button mat-button color="warn" (click)="removeCertificate(i)">{{ 'actions.removeCertificate' | translate}}</button>
+                            </mat-card-actions>
+
+                            <mat-divider></mat-divider>
+                        </mat-card>
+                    </div>
+                </div>
+
+                <button mat-raised-button color="primary" (click)="addCertificate()">{{ 'actions.addCertificate' | translate}}</button>
+            </mat-tab>
+
+        </mat-tab-group>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-button (click)="onCancel()">{{ 'actions.cancel' | translate}}</button>
+    <button mat-button [disabled]="editCrewForm.invalid" (click)="onSave()">{{ 'actions.save' | translate}}</button>
+</mat-dialog-actions>

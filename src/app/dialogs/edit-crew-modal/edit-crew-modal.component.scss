@@ -1,0 +1,26 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; 
+    
+    mat-form-field {
+      width: 100%;
+    }
+  }
+  
+  mat-tab-group {
+    mat-tab-body-wrapper {
+      padding: 16px;
+    }
+  }
+  
+  mat-card {
+    margin-bottom: 16px;
+  }
+  
+  mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px; 
+  }
+  

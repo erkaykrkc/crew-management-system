@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -14,7 +15,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HomeComponent } from './home/home.component';
 import { LanguageSelectorComponent } from './language-selector/language-selector.component';
 import { CrewListComponent } from './crew-list/crew-list.component';
-import { CrewCertificatesModalComponent } from './dialog/crew-certificates-modal/crew-certificates-modal.component';
+import { CrewCertificatesModalComponent } from './dialogs/crew-certificates-modal/crew-certificates-modal.component';
+import { EditCrewModalComponent } from './dialogs/edit-crew-modal/edit-crew-modal.component';
 
 // Import Angular Material UI Modules
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -25,7 +27,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
+// for translating from jsons
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -37,11 +46,14 @@ export function HttpLoaderFactory(http: HttpClient) {
     LanguageSelectorComponent,
     CrewListComponent,
     CrewCertificatesModalComponent,
+    EditCrewModalComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
@@ -57,7 +69,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatButtonModule,
     MatTableModule,
     MatDialogModule,
-    MatDividerModule
+    MatDividerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,
+    MatTabsModule,
+    MatSnackBarModule
   ],
   providers: [
     provideAnimationsAsync()

@@ -4,6 +4,7 @@
   "English": "English",
   "France": "France",
   "Portuguese": "Portuguese",
+  "Edit Crew Member": "Edit Crew Member",
   "crew": {
     "firstName": "First Name",
     "lastName": "Last Name",
@@ -16,13 +17,31 @@
     "certificates": "Certificates",
     "certificateType": "Certificate Type",
     "issueDate": "Issue Date",
-    "expiryDate": "Expiry Date"
+    "expiryDate": "Expiry Date",
+    "crewMemberInformation": "Crew Member Information",
+    "captain": "Captain",
+    "firstOfficer": "First Officer",
+    "engineer": "Engineer",
+    "canada": "Canada",
+    "usa": "USA",
+    "uk": "United Kingdom",
+    "certificate": "Certificate"
   },
   "actions": {
     "header": "Actions",
     "edit": "Edit",
     "delete": "Delete",
-    "viewCertificates": "View Certificates"
+    "viewCertificates": "View Certificates",
+    "removeCertificate": "Remove Certificate",
+    "addCertificate": "Add Certificate",
+    "cancel": "Cancel",
+    "save": "Save"
   },
-  "Close": "Close"
+  "Close": "Close",
+  "View": "View",
+  "messages": {
+    "editSuccess": "Crew member updated successfully!",
+    "deleteSuccess": "Crew member deleted successfully!",
+    "close": "Close"
+  }
 }
