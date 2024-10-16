@@ -6,6 +6,7 @@
   "Portuguese": "Portuguese",
   "Edit Crew Member": "Edit Crew Member",
   "Add Crew Member": "Add Crew Member",
+  "Add Certificate Type": "Add Certificate Type",
   "crew": {
     "firstName": "First Name",
     "lastName": "Last Name",
@@ -71,5 +72,10 @@
     "India": "India",
     "Turkey": "Turkey",
     "Spain": "Spain"
+  },
+  "certificateTypes": {
+    "name": "Certificate Name",
+    "description": "Certificate Description",
+    "add": "Add"
   }
 }

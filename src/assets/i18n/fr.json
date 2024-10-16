@@ -6,6 +6,7 @@
   "Portuguese": "Portugais",
   "Edit Crew Member": "Modifier Membre de l'Équipage",
   "Add Crew Member": "Ajouter un membre d'équipage",
+  "Add Certificate Type": "Ajouter un type de certificat",
   "crew": {
     "firstName": "Prénom",
     "lastName": "Nom de Famille",
@@ -71,5 +72,10 @@
     "India": "Inde",
     "Turkey": "Turquie",
     "Spain": "Espagne"
+  },
+  "certificateTypes": {
+    "name": "Nom du Certificat",
+    "description": "Description du Certificat",
+    "add": "Ajouter"
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Crew } from '../models/crew.model';
-import { CREW_DATA } from './example-crew-data'; // imported example of crew members
+import { CREW_DATA } from '../example-data/example-crew-data'; // imported example of crew members
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { TranslateService } from '@ngx-translate/core';
 

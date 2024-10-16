@@ -11,7 +11,6 @@ export class LanguageSelectorComponent {
   selectedLanguage: any;
 
   constructor(private translate: TranslateService) {
-    console.log('anne', localStorage.getItem('selectedLanguage'));
   }
 
   ngOnInit(): void {

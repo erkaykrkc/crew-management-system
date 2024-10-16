@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { Crew } from '../../models/crew.model';
+import { CertificateTypeService } from '../../services/certificate-type.service';
 
 @Component({
   selector: 'app-edit-crew-modal',
@@ -14,10 +15,12 @@ export class EditCrewModalComponent implements OnInit {
 
   nationalities: string[] = [];
   titles: string[] = [];
+  certificateTypes: any[] = [];
 
   constructor(
     public dialogRef: MatDialogRef<EditCrewModalComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Crew
+    @Inject(MAT_DIALOG_DATA) public data: Crew,
+    private certificateTypeService: CertificateTypeService
   ) {
     this.editCrewForm = new FormGroup({
       firstName: new FormControl(this.data.firstName, Validators.required),
@@ -34,6 +37,7 @@ export class EditCrewModalComponent implements OnInit {
   ngOnInit() {
     this.nationalities = this.getNationalities();
     this.titles = this.getTitles();
+    this.certificateTypes = this.certificateTypeService.getCertificateTypes();
   }
 
   getNationalities(): string[] {

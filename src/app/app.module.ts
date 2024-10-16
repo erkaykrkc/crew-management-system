@@ -19,6 +19,7 @@ import { CrewCertificatesModalComponent } from './dialogs/crew-certificates-moda
 import { EditCrewModalComponent } from './dialogs/edit-crew-modal/edit-crew-modal.component';
 import { AddCrewModalComponent } from './dialogs/add-crew-modal/add-crew-modal.component';
 import { CrewCardModalComponent } from './dialogs/crew-card-modal/crew-card-modal.component';
+import { CertificateTypeCreateComponent } from './certificate-type-create/certificate-type-create.component';
 
 // Import Angular Material UI Modules
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -52,6 +53,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     EditCrewModalComponent,
     AddCrewModalComponent,
     CrewCardModalComponent,
+    CertificateTypeCreateComponent,
   ],
   imports: [
     BrowserModule,

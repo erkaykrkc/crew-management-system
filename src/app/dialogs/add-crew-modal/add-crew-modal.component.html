@@ -1,16 +1,20 @@
 <h2 mat-dialog-title>{{ 'Add Crew Member' | translate}}</h2>
 <mat-dialog-content>
   <form [formGroup]="addCrewForm">
+
+    <!-- First Name -->
     <mat-form-field appearance="fill">
       <mat-label>{{ 'crew.firstName' | translate}}</mat-label>
       <input matInput formControlName="firstName">
     </mat-form-field>
 
+    <!-- Last Name -->
     <mat-form-field appearance="fill">
       <mat-label>{{ 'crew.lastName' | translate}}</mat-label>
       <input matInput formControlName="lastName">
     </mat-form-field>
 
+    <!-- Translate -->
     <mat-form-field appearance="fill">
         <mat-label>{{ 'crew.title' | translate}}</mat-label>
         <mat-select formControlName="title">
@@ -18,6 +22,7 @@
         </mat-select>
     </mat-form-field>      
 
+    <!-- Nationality -->
     <mat-form-field appearance="fill">
       <mat-label>{{ 'crew.nationality' | translate}}</mat-label>
       <mat-select formControlName="nationality">
@@ -25,16 +30,19 @@
       </mat-select>
     </mat-form-field>
 
+    <!-- Daily Rate -->
     <mat-form-field appearance="fill">
       <mat-label>{{ 'crew.dailyRate' | translate}}</mat-label>
       <input matInput formControlName="dailyRate" type="number">
     </mat-form-field>
 
+    <!-- Days On Board -->
     <mat-form-field appearance="fill">
       <mat-label>{{ 'crew.daysOnBoard' | translate}}</mat-label>
       <input matInput formControlName="daysOnBoard" type="number">
     </mat-form-field>
 
+    <!-- Currency -->
     <mat-form-field appearance="fill">
       <mat-label>{{ 'crew.currency' | translate}}</mat-label>
       <mat-select formControlName="currency">
@@ -43,13 +51,18 @@
       </mat-select>
     </mat-form-field>
 
+    <!-- Certificates -->
     <h3>{{'crew.certificates' | translate}}</h3>
     <div formArrayName="certificates">
         <div *ngFor="let cert of certificates?.controls; let i = index" [formGroupName]="i">
-        <mat-form-field appearance="fill">
-          <mat-label>{{ 'crew.certificateType' | translate}}</mat-label>
-          <input matInput formControlName="type">
-        </mat-form-field>
+        <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'certificateTypes.name' | translate }}</mat-label>
+        <mat-select formControlName="type" required>
+          <mat-option *ngFor="let certType of certificateTypes" [value]="certType.name">
+            {{ certType.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>{{ 'crew.issueDate' | translate}}</mat-label>
           <input matInput formControlName="issueDate" type="date">

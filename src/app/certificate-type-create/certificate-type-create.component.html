@@ -1,0 +1,31 @@
+<div class="header">
+  <mat-toolbar>
+    <mat-icon class='icon' fontIcon="people" />
+    <span>{{'Crew Management System' | translate}}</span>
+    <span class="spacer"></span>
+    <app-language-selector></app-language-selector>
+  </mat-toolbar>
+</div>
+<div class="content">
+  <div class="back-icon">
+    <button mat-icon-button [routerLink]="['/']">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+  </div>
+  <div class="add-form-class">
+    <h2>{{'Add Certificate Type' | translate}}</h2>
+    <form [formGroup]="certificateTypeForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'certificateTypes.name' | translate}}</mat-label>
+        <input matInput formControlName="name" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'certificateTypes.description' | translate}}</mat-label>
+        <textarea matInput formControlName="description" required></textarea>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="!certificateTypeForm.valid">{{ 'certificateTypes.add' | translate}}</button>
+    </form>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
+import { CertificateTypeService } from '../../services/certificate-type.service';
 
 @Component({
   selector: 'app-add-crew-modal',
@@ -11,10 +12,12 @@ export class AddCrewModalComponent {
   addCrewForm: FormGroup;
   nationalities: string[] = [];
   titles: string[] = [];
+  certificateTypes: any[] = [];
 
   constructor(
     public dialogRef: MatDialogRef<AddCrewModalComponent>,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private certificateTypeService: CertificateTypeService
   ) {
 
     // Creating reactive forms
@@ -33,6 +36,7 @@ export class AddCrewModalComponent {
   ngOnInit(): void {
     this.nationalities = this.getNationalities();
     this.titles = this.getTitles();
+    this.certificateTypes = this.certificateTypeService.getCertificateTypes();
   }
 
   getNationalities(): string[] {

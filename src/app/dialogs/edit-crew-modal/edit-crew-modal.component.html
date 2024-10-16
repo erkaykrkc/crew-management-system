@@ -20,14 +20,16 @@
                 <mat-form-field appearance="fill">
                     <mat-label>{{ 'crew.title' | translate}}</mat-label>
                     <mat-select formControlName="title">
-                        <mat-option *ngFor="let title of titles" [value]="title">{{ 'titles.' + title | translate}}</mat-option>
+                        <mat-option *ngFor="let title of titles" [value]="title">{{ 'titles.' + title |
+                            translate}}</mat-option>
                     </mat-select>
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
                     <mat-label>{{ 'crew.nationality' | translate}}</mat-label>
                     <mat-select formControlName="nationality">
-                        <mat-option *ngFor="let nationality of nationalities" [value]="nationality">{{ 'nationalities.' + nationality | translate}}</mat-option>
+                        <mat-option *ngFor="let nationality of nationalities" [value]="nationality">{{ 'nationalities.'
+                            + nationality | translate}}</mat-option>
                     </mat-select>
                 </mat-form-field>
 
@@ -54,38 +56,29 @@
             <mat-tab label="{{ 'crew.certificate' | translate}}">
                 <div formArrayName="certificates">
                     <div *ngFor="let cert of certificates.controls; let i=index" [formGroupName]="i">
-                        <mat-card style="margin-bottom: 16px;">
-                            <mat-card-header>
-                                <mat-card-title>{{ 'crew.certificate' | translate}} #{{i + 1}}</mat-card-title>
-                            </mat-card-header>
-
-                            <mat-card-content>
-                                <mat-form-field appearance="fill" style="width: 100%;">
-                                    <mat-label>{{ 'crew.certificateType' | translate}}</mat-label>
-                                    <input matInput placeholder="Certificate Type" formControlName="type">
-                                </mat-form-field>
-
-                                <mat-form-field appearance="fill" style="width: 100%;">
-                                    <mat-label>{{ 'crew.issueDate' | translate}}</mat-label>
-                                    <input matInput placeholder="Issue Date" formControlName="issueDate" type="date">
-                                </mat-form-field>
-
-                                <mat-form-field appearance="fill" style="width: 100%;">
-                                    <mat-label>{{ 'crew.expiryDate' | translate}}</mat-label>
-                                    <input matInput placeholder="Expiry Date" formControlName="expiryDate" type="date">
-                                </mat-form-field>
-                            </mat-card-content>
-
-                            <mat-card-actions>
-                                <button mat-button color="warn" (click)="removeCertificate(i)">{{ 'actions.removeCertificate' | translate}}</button>
-                            </mat-card-actions>
-
-                            <mat-divider></mat-divider>
-                        </mat-card>
+                        <mat-form-field appearance="fill">
+                            <mat-label>{{ 'Certificate Type' | translate }}</mat-label>
+                            <!-- Using mat-select for certificate types -->
+                            <mat-select formControlName="type">
+                              <mat-option *ngFor="let type of certificateTypes" [value]="type.name">{{ type.name }}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                  
+                          <mat-form-field appearance="fill">
+                            <mat-label>{{ 'Issue Date' | translate }}</mat-label>
+                            <input matInput formControlName="issueDate" type="date">
+                          </mat-form-field>
+                  
+                          <mat-form-field appearance="fill">
+                            <mat-label>{{ 'Expiry Date' | translate }}</mat-label>
+                            <input matInput formControlName="expiryDate" type="date">
+                          </mat-form-field>
+                  
+                          <button mat-raised-button color="warn" (click)="removeCertificate(i)">{{ 'Remove Certificate' | translate }}</button>
                     </div>
                 </div>
-
-                <button mat-raised-button color="primary" (click)="addCertificate()">{{ 'actions.addCertificate' | translate}}</button>
+                <button mat-raised-button color="primary" (click)="addCertificate()">{{ 'actions.addCertificate' |
+                    translate}}</button>
             </mat-tab>
 
         </mat-tab-group>
@@ -94,5 +87,5 @@
 
 <mat-dialog-actions>
     <button mat-button (click)="onCancel()">{{ 'actions.cancel' | translate}}</button>
-    <button mat-button [disabled]="editCrewForm.invalid" (click)="onSave()">{{ 'actions.save' | translate}}</button>
+    <button mat-button [disabled]="editCrewForm.status !== 'VALID'" (click)="onSave()">{{ 'actions.save' | translate}}</button>
 </mat-dialog-actions>
