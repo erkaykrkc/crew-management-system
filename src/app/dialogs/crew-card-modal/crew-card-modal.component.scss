@@ -1,0 +1,31 @@
+.crew-details {
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.crew-info-card {
+    width: 100%;
+    max-width: 600px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.certificates-list {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.certificate-card {
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+}
+
+.tab-content {
+    margin-top: 15px;
+}
